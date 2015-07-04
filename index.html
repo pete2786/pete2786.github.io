@@ -4,43 +4,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>About Me - David E. H. Peterson</title>
+    <title>Home - David E. H. Peterson</title>
     {% include head.html %}
   </head>
   <body>
     <div class="container">
       {% include header.html active="home"%}
 
-      <div class="jumbotron">
-        <h1>Welcome</h1>
-        <p class="lead">Thanks for visiting. Most people call me Dave or by my initials, DP. I am a husband, father, software engineer, bicyclist, outdoorsmen, sports fan, beer enthusiast, boat owner and Minnesotan.</p>
-      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          {% for post in paginator.posts %}
+          <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+          <p class="author">
+            <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
+          </p>
+          <div class="content">
+            {{ post.content }}
+          </div>
+          <hr />
+          {% endfor %}
 
-      <hr />
-
-      <!-- This loops through the paginated posts -->
-      {% for post in paginator.posts %}
-        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-        <p class="author">
-          <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
-        </p>
-        <div class="content">
-          {{ post.content }}
+          <div class="pagination">
+            {% if paginator.previous_page %}
+              <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+            {% else %}
+              <span class="previous">Previous</span>
+            {% endif %}
+            <span class="page_number "> | Page: {{ paginator.page }} of {{ paginator.total_pages }} | </span>
+            {% if paginator.next_page %}
+              <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+            {% else %}
+              <span class="next ">Next</span>
+            {% endif %}
+          </div>
         </div>
-      {% endfor %}
 
-      <div class="pagination">
-        {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-        {% else %}
-          <span class="previous">Previous</span>
-        {% endif %}
-        <span class="page_number "> | Page: {{ paginator.page }} of {{ paginator.total_pages }} | </span>
-        {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-        {% else %}
-          <span class="next ">Next</span>
-        {% endif %}
+        <div class="col-lg-4">
+          <div class="well">
+            <h3>Welcome</h3>
+            <p>Thanks for visiting. Most people call me Dave or by my initials, DP. I am a husband, father, software engineer, bicyclist, outdoorsmen, sports fan, beer enthusiast, boat owner and Minnesotan.</p>
+          </div>
+        </div>
       </div>
 
     </div>
