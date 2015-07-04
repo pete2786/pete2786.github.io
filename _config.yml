@@ -2,10 +2,10 @@ timezone: America/Chicago
 future:      false
 show_drafts: false
 limit_posts: 10
-highlighter: pygments
+highlighter: ruby
 
 relative_permalinks: true
 
 permalink: date
 paginate_path: 'page:num'
-paginate: nil
+paginate: 5

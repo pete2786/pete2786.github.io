@@ -1,135 +1,49 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>David E. H. Peterson</title>
-
-    <!-- Bootstrap -->
-    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>About Me - David E. H. Peterson</title>
+    {% include head.html %}
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about" class="smooth">About</a></li>
-          <li><a href="#thoughts" class="smooth">Thoughts</a></li>
-          <li><a href="#projects" class="smooth">Projects</a></li>
-          <li><a href="#contact" class="smooth">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">David E. H. Peterson</h3>
-      </div>
+      {% include header.html active="home"%}
 
       <div class="jumbotron">
         <h1>Welcome</h1>
         <p class="lead">Thanks for visiting. Most people call me Dave or by my initials, DP. I am a husband, father, software engineer, bicyclist, outdoorsmen, sports fan, beer enthusiast, boat owner and Minnesotan.</p>
       </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h2 id="about">Personal</h2>
-          <h4>Location</h4>
-          <p>
-            I currently reside in the <a href="http://en.wikipedia.org/wiki/Nokomis,_Minneapolis">Nokomis</a> Neighborhood of <a href="http://en.wikipedia.org/wiki/Minneapolis">Minneapolis, Minnesota</a>.
-          </p>     
+      <hr />
 
-          <h4>Family</h4>
-          <p>
-            I have been married since June 2011 to my wife, Megan. We have a son and a dog.
-          </p>
-
-          <h4>Bicycling</h4>
-          <p>
-            I try to commute by bicycle to work, including as often as possible in the winter months. I also ride trails for leisure as well as off-road mountain biking at nearby trail systems such as Lebanon, <a href="http://www.dnr.state.mn.us/state_trails/cuyuna_lakes/mtnbiking.html">Cuyuna</a> and <a href="http://www.co.clark.wi.us/index.aspx?NID=228">Levis Mound</a>.
-          </p>
-
-          <h4>Beer</h4>
-          <p>
-            At this time, my favorite local beers are Bauhaus Wonderstuff, Bent Paddle Venture Pils and Surly Furious. My favorite regional/national beers are Bells Two Hearted Ale and Victory Prima Pils.
-          </p>
-
-          <h4>Sports</h4>
-          <p>
-            I am a die-hard <a href="http://www.gophersports.com/">University of Minnesota</a> Gopher basketball, football and hockey fan (in that order) and cheer for all Minnesota sports teams. I am also legally a Green Bay Packer fan by marriage. I also work a Sport's based software company, but spend little of my work time on the sports domain.
-          </p>
+      <!-- This loops through the paginated posts -->
+      {% for post in paginator.posts %}
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+        <p class="author">
+          <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
+        </p>
+        <div class="content">
+          {{ post.content }}
         </div>
+      {% endfor %}
 
-        <div class="col-lg-6">
-          <h2>Professional</h2>
-          <h4>Education</h4>
-          <p>
-            I received my Bachelors of Science in Computer Science, with emphasis in Software Engineering, from the <a href="http://www.cs.umn.edu/index.php">College of Science and Engineering</a> at the University of Minnesota, Twin Cities.
-          </p>
-
-          <h4>Career</h4>
-          <p>
-            I am a Software Engineer at <a href="http://sportngin.com">Sport Ngin</a> in Minneapolis. I primarly use <a href="http://rubyonrails.org/">Ruby on Rails</a> and Angular for development. Sport Ngin has lots of <a href="https://github.com/sportngin">cool open source projects</a> which are worth checking out.</p>
-
-            <p>
-              In addition to my responsibilities at the Sport Ngin, I do occasional freelance Ruby on Rails development projects. I have also done data modeling and reporting with Oracle Business Intelligence and Tableau.
-            </p>
-
-          <h4>Resumé</h4>
-          <p>
-            For a full professional resume, please email me. My <a href="https://www.linkedin.com/pub/david-peterson/32/538/120">LinkedIn profile</a> works well as a substitute. You may also take a look at my <a href="https://github.com/pete2786">Github profile</a> or the projects listed on this site.</p>
-        </div>
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+        {% else %}
+          <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page_number "> | Page: {{ paginator.page }} of {{ paginator.total_pages }} | </span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+        {% else %}
+          <span class="next ">Next</span>
+        {% endif %}
       </div>
 
-      <h2 id="thoughts">Thoughts/Opinions</h2>
-      <p>This will be the place I dump my thoughts on being a developer, father, and other topics that interest me and maybe you too! I try my best to tag posts properly so new father's aren't stuck reading about software complaining. More coming soon.</p>
-
-      <h2 id="projects">Featured Projects</h2>
-      <div class="media">
-        <a class="pull-right" href="http://umn.campuscodefest.org">
-          <img class="media-object" src="images/ccf.jpg" width="200px" alt="Campus Codefest">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading">Campus Codefest <small>released summer 2014</small></h4>
-          <p>In 2013, a few University developers and I created a blended unconference and hackathon we called "Campus Codefest" (CCF). The tools available were tolerable to plan the event, but missing a few key features. The CCF app blends idea generation, voting, volunteering and event registration. The application can be used by any organization, but currently the primary organization using it is the University of Minnesota.
-          </p>
-        </div>
-      </div>
-
-      <div class="media">
-        <a class="pull-right" href="http://www.fleaquest.com">
-          <img class="media-object" src="http://fleaquest.com/assets/logo-fleaquest.svg" width="200" height="40" alt="FleaQuest" class="vector">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading">FleaQuest <small>released fall 2013</small></h4>
-          <p><a href="http://www.fleaquest.com">FleaQuest</a> is a welcoming community where all may contribute by adding listings and sharing knowledge to grow the site for the greater good of the vintage and antiques community. Developed in Ruby on Rails. I was the primary developer on this project.</p>
-        </div>
-      </div>
-
-      <h2 id="contact">Contact</h2>
-      <p>If you have any questions or comments please contact me via <a href="mailto: eazydp+io@gmail.com">email</a>.</p>
-
-      <div class="footer">
-        <p>&copy; David E. H. Peterson 2014</p>
-      </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      $('a.smooth').click(function(){
-          $('html, body').animate({
-              scrollTop: $( $.attr(this, 'href') ).offset().top
-          }, 500);
-          return false;
-      });
-    </script>
+    </div>
+    {% include foot.html %}
   </body>
 </html>

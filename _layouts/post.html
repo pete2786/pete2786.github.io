@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>David E. H. Peterson</title>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="container">
+      {% include header.html %}
+        <h1>{{ page.title }}</h1>
+        <p class="author">
+          <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+        </p>
+        <div class="content">
+          {{ content }}
+        </div>
+      <hr />
+      <p>
+        {% if page.previous %}
+        <a href="#">{{page.previous}}</a>
+        {% else %}
+        <span>Previous</span>
+        {% endif %}
+         | <a href="{{page.url}}">{{ page.title }}</a> |
+
+        {% if page.previous %}
+        <a href="#">{{page.next}}</a>
+        {% else %}
+        <span>Next</span>
+        {% endif %}
+      </p>
+    </div>
+
+    {% include foot.html %}
+  </body>
+</html>
