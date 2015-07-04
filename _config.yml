@@ -2,7 +2,7 @@ timezone: America/Chicago
 future:      false
 show_drafts: false
 limit_posts: 10
-highlighter: ruby
+highlighter: pygments
 
 relative_permalinks: true
 
