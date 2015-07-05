@@ -9,7 +9,7 @@
       {% include header.html %}
         <h1>{{ page.title }}</h1>
         <p class="author">
-          <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+          <span class="date">Posted on: {{ page.date | date: '%B %d, %Y' }}</span>
         </p>
         <div class="content">
           {{ content }}
@@ -17,16 +17,18 @@
       <hr />
       <p>
         {% if page.previous %}
-        <a href="#">{{page.previous}}</a>
+        <a href="{{page.previous.url}}">
+          <i class="fa fa-arrow-left"></i> {{page.previous.title}}
+        </a>
         {% else %}
         <span>Previous</span>
         {% endif %}
          | <a href="{{page.url}}">{{ page.title }}</a> |
 
-        {% if page.previous %}
-        <a href="#">{{page.next}}</a>
+        {% if page.next %}
+        <a href="{{page.next.url}}">{{page.next.title}} <i class="fa fa-arrow-right"></i></a> 
         {% else %}
-        <span>Next</span>
+        <span>Next</span> <i class="fa fa-arrow-right"></i>
         {% endif %}
       </p>
     </div>

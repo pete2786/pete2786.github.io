@@ -1,0 +1,2 @@
+### Notifications via an Observer ### 
+I found the [documentation for notifications](https://github.com/merit-gem/merit#getting-notifications) to be slightly lacking. Merit requires an `Observer` class be implemented, which is simply a Ruby class which defines the `update` method. The `update` method a the `changed_data` param, which is a hash of changed data. This observer will be called anytime there is a reputation change and try to describe the change.
