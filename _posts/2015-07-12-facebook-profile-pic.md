@@ -10,7 +10,7 @@ The personal picture I have on the header for the website is being pulled from F
 <img src="http://graph.facebook.com/:your_id/picture/"></img>
 {% endhighlight %}
 
-To find your your Facebook id, use the [Facebok API Explorer](https://developers.facebook.com/tools/explorer) to hit the `/me` endpoint. You will get back something that looks like this: 
+To find your your Facebook id, use the [Facebook API Explorer](https://developers.facebook.com/tools/explorer) to hit the `/me` endpoint. You will get back something that looks like this: 
 
 {% highlight json %}
 {
