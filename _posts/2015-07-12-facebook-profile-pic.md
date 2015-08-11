@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Latest profile pic via Facebook Graph
-tags: [persona]
+tags: [personal]
 ---
 
 The personal picture I have on the header for the website is being pulled from Facebook. The Graph API provides an easy means to linking to your current profile picture, so you can always have a fresh image on your personal website.  It is as simple as using the following markup: 
