@@ -115,7 +115,7 @@ end
 
 {% endhighlight %}
 
-That's it, hopefully this helped you get on your way to earning "Advanced magification badge" with the Merit gem.
+That's it, hopefully this helped you get on your way to earning "Advanced gamification badge" with the Merit gem.
 
 
 
