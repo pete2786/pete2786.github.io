@@ -16,6 +16,6 @@ I then include the concern in each model overroad the `slack_message` method in 
 
 {% gist pete2786/80f3eb56e6168eafd949 project_comment.rb %}
 
-My application ihas a multi-tenant architecture, so I simply stuck an attribute on the tenant model to add a webhook URL, then deployed the application. In the future, I'd move the notification processing to a background task in the mixin.
+My application has a multi-tenant architecture, so I simply stuck an attribute on the tenant model to add a webhook URL, then deployed the application. In the future, I'd move the notification processing to a background task in the mixin.
 
 Overall, I met the original need for a backroom chat and saved myself the headache of another custom solution when Slack met the requirements.
