@@ -2,7 +2,7 @@ timezone: America/Chicago
 future:      false
 show_drafts: false
 limit_posts: 10
-highlighter: pygments
+highlighter: rouge
 permalink: date
 paginate_path: 'page:num'
 paginate: 5
