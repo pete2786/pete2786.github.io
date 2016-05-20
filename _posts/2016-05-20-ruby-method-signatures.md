@@ -30,7 +30,7 @@ For example: `def a(a,b); end` has two required parameters. `method(:a).arity` r
 ##
 
 ## Real world example
-Much like Calculus, these are neat tricks but how can they apply in the real world? A use case I came across recently class which was simply provided a Rails Active Record scope name and an array of parameters to pass. I was able to leverage the `arity` method to make my class more flexible. Here is a watered down example of my solution:
+Much like Calculus, these are neat tricks but how can they apply in the real world? A use case I came across recently was class which was simply provided a Rails Active Record scope name and an array of parameters to pass. I was able to leverage the `arity` method to make my class more flexible. Here is a watered down example of my solution:
 
 ```
 class ScopeCaller
