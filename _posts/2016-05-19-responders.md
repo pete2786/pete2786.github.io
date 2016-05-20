@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Responders - Up Your Rails Game
-tags: [professional rails]
+title:  Responders - Junior Senior
+tags: [professional rails ruby]
 ---
 
 After a few months, or a few projects of Rails development, you might start noticing a boring, repetive pattern with your controllers. Something like: 
