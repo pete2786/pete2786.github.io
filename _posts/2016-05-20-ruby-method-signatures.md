@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Ruby Method Class, Get Addicted - Junior Senior
+title:  Ruby Method Class, Get Addicted - Ruby Junior Senior
 tags: [professional rails ruby]
 ---
 

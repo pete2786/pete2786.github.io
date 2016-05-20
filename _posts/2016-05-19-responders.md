@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Responders - Junior Senior
+title:  Responders - Rails Junior Senior
 tags: [professional rails ruby]
 ---
 
