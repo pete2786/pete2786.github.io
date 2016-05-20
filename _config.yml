@@ -2,8 +2,9 @@ timezone: America/Chicago
 future:      false
 show_drafts: false
 limit_posts: 10
-highlighter: pygments
+highlighter: rouge
 permalink: date
 paginate_path: 'page:num'
 paginate: 5
 url: http://pete2786.github.io
+gems: [jekyll-paginate, jekyll-gist]
